@@ -1,7 +1,8 @@
 <?php
+require_once ("Vehiculo.php");
 class Utilitario extends Vehiculo {
     public function RealizarEntrega(){    
-    return "Utilitario (ID: $this->id): Realizando entrega rápida en zonas urbanas.";
+    return "Utilitario realizando entrega rápida en zonas urbanas.";
     }
 }
 ?>
