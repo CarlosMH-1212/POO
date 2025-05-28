@@ -15,6 +15,4 @@ echo $Vehiculo3->realizarEntrega() . "\n";
 
 $departamento = new Mantenimiento($Vehiculo1,"13/05/25");
 
-s
-
 ?>
