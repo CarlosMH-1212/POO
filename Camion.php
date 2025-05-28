@@ -4,5 +4,5 @@ class Camion extends Vehiculo {
         return "Camión Realizando entrega de carga pesada a largas distancias.";
     }
 }
-a
+
 ?>
