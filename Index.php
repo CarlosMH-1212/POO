@@ -6,9 +6,9 @@ require_once("Refrigerado.php");
 require_once("Utilitario.php");
 require_once("VehiculoExterno.php");
 
-$Vehiculo1 = new Camion("MotorDiesel", "ChasisFuerte", "CarroceriaGrande", "ABC123", 1);
-$Vehiculo2 = new Utilitario("MotorLigero", "ChasisMedio", "CarroceriaCompacta", "DEF456", 2);
-$Vehiculo3 = new Refrigerado("MotorFrio", "ChasisFrio", "CarroceriaFrigorifica", "GHI789", 3);
+$Vehiculo1 = new Camion("MotorDiesel", "ChasisFuerte", "CarroceriaGrande", "ABC123", "Roto");
+$Vehiculo2 = new Utilitario("MotorLigero", "ChasisMedio", "CarroceriaCompacta", "DEF456", "Arreglado");
+$Vehiculo3 = new Refrigerado("MotorFrio", "ChasisFrio", "CarroceriaFrigorifica", "GHI789", "Arreglado");
 echo $Vehiculo1->realizarEntrega() . "\n";
 echo $Vehiculo2->realizarEntrega() . "\n";
 echo $Vehiculo3->realizarEntrega() . "\n";
