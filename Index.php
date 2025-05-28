@@ -13,8 +13,8 @@ echo $Vehiculo1->realizarEntrega() . "\n";
 echo $Vehiculo2->realizarEntrega() . "\n";
 echo $Vehiculo3->realizarEntrega() . "\n";
 
-$departamento = new Mantenimiento($Vehiculo1,"13/05/25");
+$Vehiculo_arreglado = new Mantenimiento($Vehiculo1,"13/05/25");
 
-
+echo $Vehiculo_arreglado->actualizarEstado("Arreglado");
 
 ?>
