@@ -1,14 +1,20 @@
 <?php
-$camion = new Camion("MotorDiesel", "ChasisFuerte", "CarroceriaGrande", "ABC123", 1);
-$utilitario = new Utilitario("MotorLigero", "ChasisMedio", "CarroceriaCompacta", "DEF456", 2);
-$refrigerado = new Refrigerado("MotorFrio", "ChasisFrio", "CarroceriaFrigorifica", "GHI789", 3);
-echo $camion->realizarEntrega() . "\n";
-echo $utilitario->realizarEntrega() . "\n";
-echo $refrigerado->realizarEntrega() . "\n";
+require_once ("Vehiculo.php");
+require_once("Mantenimiento.php");
+require_once("Camion.php");
+require_once("Refrigerado.php");
+require_once("Utilitario.php");
+require_once("VehiculoExterno.php");
 
-$departamento = new DepartamentoMantenimiento();
+$Vehiculo1 = new Camion("MotorDiesel", "ChasisFuerte", "CarroceriaGrande", "ABC123", 1);
+$Vehiculo2 = new Utilitario("MotorLigero", "ChasisMedio", "CarroceriaCompacta", "DEF456", 2);
+$Vehiculo3 = new Refrigerado("MotorFrio", "ChasisFrio", "CarroceriaFrigorifica", "GHI789", 3);
+echo $Vehiculo1->realizarEntrega() . "\n";
+echo $Vehiculo2->realizarEntrega() . "\n";
+echo $Vehiculo3->realizarEntrega() . "\n";
 
-$m1 = new Mantenimiento($vehiculo1, "2025-06-01", "Revisión general");
-$m2 = new Mantenimiento($vehiculo2, "2025-06-05", "Cambio de ruedas");
+$departamento = new Mantenimiento($Vehiculo1,"13/05/25");
+
+s
 
 ?>
