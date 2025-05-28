@@ -4,4 +4,5 @@ class Camion extends Vehiculo {
         return "Camión (ID: $this->id): Realizando entrega de carga pesada a largas distancias.";
     }
 }
+a
 ?>
