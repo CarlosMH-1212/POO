@@ -1,0 +1,7 @@
+<?php
+class Camion extends Vehiculo {
+    public function RealizarEntrega(){
+        return "Camión (ID: $this->id): Realizando entrega de carga pesada a largas distancias.";
+    }
+}
+?>
