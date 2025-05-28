@@ -1,0 +1,14 @@
+<?php
+class Centro_de_operaciones {
+    public function gestion_Flota(){    
+    return "Flota gestion";
+    }
+    public function Almacenar_producto(){    
+    return "Producto Almacenado";
+    }
+    public function Ampliar_flota(){    
+    return "Flota ampliada";
+    }
+}
+
+?>
