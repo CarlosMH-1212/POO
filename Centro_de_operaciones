@@ -25,9 +25,7 @@ private $flota = [];
     public function Almacenar_producto(){    
     return "Producto Almacenado";
     }
-    public function Ampliar_flota(){    
-    return "Flota ampliada";
-    }
+
 }
 
 ?>
