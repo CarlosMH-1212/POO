@@ -6,6 +6,9 @@ require_once("Refrigerado.php");
 require_once("Utilitario.php");
 require_once("VehiculoExterno.php");
 
+
+$Centro_OP = new Centro_de_operaciones;
+
 $Vehiculo1 = new Camion("MotorDiesel", "ChasisFuerte", "CarroceriaGrande", "ABC123", "Roto");
 $Centro_OP->Ampliar_Flota($Vehiculo1);
 
