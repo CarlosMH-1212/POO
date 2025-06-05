@@ -9,14 +9,15 @@ class Mantenimiento {
         $this->fecha = $fecha;
     }
 
-    public function actualizarEstado($nuevoEstado){
-        $this->Vehiculo->setMantenimiento($nuevoEstado);
+   public function actualizarEstado($nuevoEstado){
+        $this->vehiculo->setMantenimiento($nuevoEstado); // CORREGIDO: minúscula
     }
-
 
     public function mostrarResumen() {
         $tipoVehiculo = get_class($this->vehiculo);
-        echo "Vehículo Patente: {$this->vehiculo->patente}, Fecha: {$this->fecha}, Tipo: {$tipoVehiculo}, Estado: {$this->estado}, REALIZADO\n";
+        $patente = $this->vehiculo->getPatente();         // CORREGIDO: uso de getter
+        $estado = $this->vehiculo->getMantenimiento();     // CORREGIDO: uso de getter
+        echo "Vehículo Patente: {$patente}, Fecha: {$this->fecha}, Tipo: {$tipoVehiculo}, Estado: {$estado}, REALIZADO\n";
     }
 }
 
