@@ -1,12 +1,10 @@
 <?php
-require_once("Vehiculo.php");
+require_once ("Vehiculo.php");
 require_once("Mantenimiento.php");
 require_once("Camion.php");
 require_once("Refrigerado.php");
 require_once("Utilitario.php");
 require_once("VehiculoExterno.php");
-require_once("Centro_de_operaciones.php");
-$Centro_OP = new Centro_de_operaciones(3);
 
 $Vehiculo1 = new Camion("MotorDiesel", "ChasisFuerte", "CarroceriaGrande", "ABC123", "Roto");
 $Centro_OP->Ampliar_Flota($Vehiculo1);
