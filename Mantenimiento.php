@@ -10,7 +10,7 @@ class Mantenimiento {
     }
 
     public function actualizarEstado($nuevoEstado){
-        $this->Vehiculo->setMantenimiento($nuevoEstado);
+        $this->vehiculo->setMantenimiento($nuevoEstado);
     }
 
 
