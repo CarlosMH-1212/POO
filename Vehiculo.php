@@ -2,11 +2,11 @@
 
     abstract class Vehiculo {
 
-    public $motor;
-    public $chasis;
-    public $carroceria;
-    public $patente;    
-    public $mantenimiento_R;
+    private $motor;
+    private $chasis;
+    private $carroceria;
+    private $patente;    
+    private $mantenimiento_R;
 
     public function __construct ($motor,$chasis,$carroceria,$patente,$mantenimiento_R){
       
