@@ -6,7 +6,7 @@ class Mantenimiento {
 
     public function __construct(Vehiculo $vehiculo, $fecha) {
         $this->vehiculo = $vehiculo;
-        $this->fecha = $fecha
+        $this->fecha = $fecha;
     }
 
     public function actualizarEstado($nuevoEstado){
