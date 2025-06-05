@@ -19,4 +19,6 @@ $Vehiculo_arreglado = new Mantenimiento($Vehiculo1,"13/05/25");
 echo $Vehiculo_arreglado->actualizarEstado("Arreglado");
 
 
+
+
 ?>
