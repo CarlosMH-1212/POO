@@ -1,8 +1,29 @@
 <?php
 class Centro_de_operaciones {
-    public function gestion_Flota(){    
-    return "Flota gestion";
+private $flota = [];
+private $flota_necesaria;
+
+    public function __construct($flota_necesaria) {
+        $this->flota_necesaria = $flota_necesaria;
     }
+
+     public function agregarFlota($vehiculo) {
+        $this->flota[] = $vehiculo;
+    }    
+
+    public function gestion_Flota(){    
+    $cant_flota = count($this->arr);
+       
+        if ($cant_flota >= $flota_necesaria){
+            return "Flota suficiente"
+        }
+        else{
+            return "Flota insuficiente"
+        }
+    }
+
+
+
     public function Almacenar_producto(){    
     return "Producto Almacenado";
     }
