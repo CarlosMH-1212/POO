@@ -7,16 +7,23 @@ private $flota = [];
         $this->flota[] = $vehiculo;
     }    
 
+    public function Ampliar_Flota_multiple(array $vehiculos) {
+    foreach ($vehiculos as $vehiculo) {
+        $this->flota[] = $vehiculo;
+    }
+}
+
     public function gestion_Flota(string $tipoClase, int $flota_necesaria){    
     $cant_flota = count(array_filter($this->flota, function($vehiculo) use ($tipoClase) {
             return $vehiculo instanceof $tipoClase;
         }));
        
-        if ($cant_flota >= $this->flota_necesaria){
+        if ($cant_flota >= $flota_necesaria){
             return "Flota suficiente";
         }
         else{
             return "Flota insuficiente";
+
         }
     }
 
