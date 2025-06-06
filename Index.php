@@ -6,7 +6,7 @@ require_once("Refrigerado.php");
 require_once("Utilitario.php");
 require_once("Centro_externo.php");
 require_once("Centro_de_operaciones.php");
-
+require_once("producto.php");
 
 
 $Centro_OP = new Centro_de_operaciones();
@@ -20,13 +20,13 @@ $Centro_OP->Ampliar_Flota($Vehiculo2);
 $Vehiculo3 = new Refrigerado("MotorFrio", "ChasisFrio", "CarroceriaFrigorifica", "GHI789", "Arreglado");
 $Centro_OP->Ampliar_Flota($Vehiculo3);
 
-echo $Vehiculo1->realizarEntrega() . "\n";
-echo $Vehiculo2->realizarEntrega() . "\n";
-echo $Vehiculo3->realizarEntrega() . "\n";
+$electro = new Producto(1, "Electrodomésticos",      "Electrónico", 1200);
+$docu    = new Producto(2, "Documentación urgente",  "Papel",          50);
+$vacunas = new Producto(3, "Vacunas",                "Medicamento",   200);
 
-
-
-
+echo $Vehiculo1->RealizarEntrega($electro) . "<br>";
+echo $Vehiculo2->RealizarEntrega($docu) . "<br>";
+echo $Vehiculo3->RealizarEntrega($vacunas) . "<br>";
 
 
 $Vehiculo_arreglado = new Mantenimiento($Vehiculo1,"13/05/25");

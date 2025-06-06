@@ -17,7 +17,7 @@
        $this-> mantenimiento_R = $mantenimiento_R;
    
     }
-abstract public function RealizarEntrega();
+abstract public function RealizarEntrega ($producto);
 
 public function setMantenimiento($nuevo_Estado){
     $this->mantenimiento_R = $nuevo_Estado;
