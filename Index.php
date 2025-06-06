@@ -35,7 +35,7 @@ echo $Vehiculo_arreglado->actualizarEstado("Arreglado");
 
 
 if ($Centro_OP->gestion_Flota("Camion",3) == "Flota insuficiente"){
-    $Centro_externo = new Centro_externo;
+    $Centro_externo = new Centro_externo($Centro_OP);
 
     $Vehiculo4 = new Camion("MotorDiesel", "ChasisFuerte", "CarroceriaGrande", "ABC123", "Arreglado");
     $Centro_externo->Ampliar_Flota_externa($Vehiculo4);
