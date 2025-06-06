@@ -18,7 +18,7 @@ private $flota = [];
             return $vehiculo instanceof $tipoClase;
         }));
        
-        if ($cant_flota >= $this->flota_necesaria){
+        if ($cant_flota >= $this->$flota_necesaria){
             return "Flota suficiente";
         }
         else{
