@@ -23,6 +23,9 @@ $Centro_OP->Ampliar_Flota($Vehiculo2);
 $Vehiculo3 = new Refrigerado("MotorFrio", "ChasisFrio", "CarroceriaFrigorifica", "GHI789", "Arreglado");
 $Centro_OP->Ampliar_Flota($Vehiculo3);
 
+//ok 
+
+
 $electro = new Producto(1, "Electrodomésticos",      "Electrónico", 1200);
 $docu    = new Producto(2, "Documentación urgente",  "Papel",          50);
 $vacunas = new Producto(3, "Vacunas",                "Medicamento",   200);
@@ -32,9 +35,9 @@ echo $Vehiculo2->RealizarEntrega($docu) . "<br>";
 echo $Vehiculo3->RealizarEntrega($vacunas) . "<br>";
 
 
-$Vehiculo_arreglado = new Mantenimiento($Vehiculo1,"13/05/25");
+$Centro_Mantenimiento = new Mantenimiento($Vehiculo1,"13/05/25");
 
-echo $Vehiculo_arreglado->actualizarEstado("Arreglado");
+echo $Centro_Mantenimiento->actualizarEstado("Arreglado");
 
 $gerente = new Gerente_logistica("12345678", "Juan", "Pérez");
 
