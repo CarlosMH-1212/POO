@@ -11,6 +11,17 @@ class Gerente_logistica {
        $this-> apellido = $apellido;
  
     }
-    }
+   
 
+    public function Coord_tareas_op(){
+
+    }
+    
+    public function Aseg_efica_op(){
+
+        }
+
+
+
+ }
 ?>
