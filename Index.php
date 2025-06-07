@@ -38,7 +38,7 @@ echo $Vehiculo_arreglado->actualizarEstado("Arreglado");
 
 $gerente = new Gerente_logistica("12345678", "Juan", "Pérez");
 
-$gerente->Coord_tareas_op($Centro_OP);
+$gerente->Coord_tareas_op($Centro_OP,$Logitrans);
 
 
 

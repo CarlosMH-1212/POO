@@ -13,20 +13,20 @@ private $flota = [];
     }
 }
 
-    public function gestion_Flota(string $tipoClase, int $flota_necesaria){    
-    $cant_flota = count(array_filter($this->flota, function($vehiculo) use ($tipoClase) {
-            return $vehiculo instanceof $tipoClase;
+    public function gestion_Flota(Logitrans $logitrans){    
+        $tipoClase = $logitrans->getTipoVehiculo();
+        $flota_necesaria = $logitrans->getCantFlotaNecesaria();
+
+        $cant_flota = count(array_filter($this->flota, function($vehiculo) use ($tipoClase) {
+            return $vehiculo instanceof $tipoClase && $vehiculo->getEstado() === "Arreglado";
         }));
        
         if ($cant_flota >= $flota_necesaria){
             return "Flota suficiente";
-        }
-        else{
+        } else {
             return "Flota insuficiente";
-
         }
     }
-
 
 
     public function Almacenar_producto(){    
