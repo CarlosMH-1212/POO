@@ -33,7 +33,6 @@ class Gerente_logistica {
     public function Aseg_efica_op(){
             
     }
-// pruebas de cambios
 
 
  }

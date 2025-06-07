@@ -1,5 +1,5 @@
 <?php
-require_once ("Vehiculo.php");
+require_once("Vehiculo.php");
 require_once("Mantenimiento.php");
 require_once("Camion.php");
 require_once("Refrigerado.php");
@@ -23,12 +23,10 @@ $Centro_OP->Ampliar_Flota($Vehiculo2);
 $Vehiculo3 = new Refrigerado("MotorFrio", "ChasisFrio", "CarroceriaFrigorifica", "GHI789", "Arreglado");
 $Centro_OP->Ampliar_Flota($Vehiculo3);
 
-//ok 
 
-
-$electro = new Producto(1, "Electrodomésticos",      "Electrónico", 1200);
-$docu    = new Producto(2, "Documentación urgente",  "Papel",          50);
-$vacunas = new Producto(3, "Vacunas",                "Medicamento",   200);
+$electro = new Producto(1, "Electrodomésticos",      "Pesado", 1200);
+$docu    = new Producto(2, "Documentación urgente",  "Liviano",          50);
+$vacunas = new Producto(3, "Vacunas",                "Refrigerado",   200);
 
 echo $Vehiculo1->RealizarEntrega($electro) . "<br>";
 echo $Vehiculo2->RealizarEntrega($docu) . "<br>";
