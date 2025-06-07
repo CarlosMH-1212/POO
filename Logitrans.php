@@ -11,6 +11,14 @@ class Logitrans {
  
     }
 
+    public function getCantFlotaNecesaria(){
+        return $this->cant_flota_necesaria;
+    }
+
+    public function getTipoVehiculo(){
+        return $this->Tipo_vehiculo;
+    }
+
     }
 
 ?>
