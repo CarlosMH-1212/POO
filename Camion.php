@@ -6,8 +6,5 @@ class Camion extends Vehiculo {
         return "Camión entregando ". $producto->getNombre(). " (" . $producto->getTipo() . ") a largas distancias.";
     }
 
-    public function puedeTransportar($producto) {
-        return $producto->getTipo() === "Pesado";
-    }
 }
 ?>

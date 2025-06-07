@@ -1,7 +1,7 @@
 <?php
 class Centro_de_operaciones {
 private $flota = [];
-
+private $productos = [];
 
      public function Ampliar_Flota($vehiculo) {
         $this->flota[] = $vehiculo;
@@ -11,7 +11,13 @@ private $flota = [];
     foreach ($vehiculos as $vehiculo) {
         $this->flota[] = $vehiculo;
     }
-}
+    }
+
+    public function Almacenar_producto($productos){
+        $this->productos[] = $productos;
+    }
+
+
 
     public function gestion_Flota(Logitrans $logitrans){    
         $tipoClase = $logitrans->getTipoVehiculo();
@@ -28,14 +34,23 @@ private $flota = [];
         }
     }
 
-    public function asignarVehiculosAProductos($productos) {
+
+public function asignarVehiculosAProductos() {
     $resultado = [];
 
-    foreach ($productos as $producto) {
+    foreach ($this->productos as $producto) {
         $asignado = false;
+
         foreach ($this->flota as $vehiculo) {
-            if (method_exists($vehiculo, 'puedeTransportar') && $vehiculo->puedeTransportar($producto)) {
-                $resultado[] = "El producto '" . $producto->getTipo() . "' será transportado por " . get_class($vehiculo) . " con patente " . $vehiculo->getPatente();
+            $vehiculoClase = get_class($vehiculo);
+            $tipoProducto = $producto->getTipo();
+
+            if (
+                ($tipoProducto == "Pesado" && $vehiculoClase == "Camion") ||
+                ($tipoProducto == "Liviano" && $vehiculoClase == "Utilitario") ||
+                ($tipoProducto == "Refrigerado" && $vehiculoClase == "Refrigerado")
+            ) {
+                $resultado[] = "El producto '" . $producto->getTipo() . "' será transportado por " . $vehiculoClase . " con patente " . $vehiculo->getPatente();
                 $asignado = true;
                 break;
             }

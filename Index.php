@@ -25,22 +25,24 @@ $Vehiculo3 = new Refrigerado("MotorFrio", "ChasisFrio", "CarroceriaFrigorifica",
 $Centro_OP->Ampliar_Flota($Vehiculo3);
 
 
-$pesados = new Producto(1, "Pesado",      "Pesado",      1200);
-$livianos    = new Producto(2, "Liviano",  "Liviano",        50);
-$refrigerado = new Producto(3, "Refrigerado", "Refrigerado",  200);
+$Producto1 = new Producto(1, "Pesado",      "Electrodomestico", 1200);
+$Centro_OP->Almacenar_producto($Producto1);
 
-$productos = [$pesados, $livianos, $refrigerado];
+$Producto2    = new Producto(2, "Liviano",  "Documentos",  50);
+$Centro_OP->Almacenar_producto($Producto2);
+
+$Producto3 = new Producto(3, "Refrigerado", "Medicamentos", 200);
+$Centro_OP->Almacenar_producto($Producto3);
 
 
 $gerente = new Gerente_logistica("12345678", "Juan", "Pérez");
 
-
-$gerente->Aseg_efica_op($Centro_OP, $productos);
-
-
 $gerente->Coord_tareas_op($Centro_OP, $Logitrans);
+
+$gerente->Aseg_efica_op($Centro_OP);
 
 
 $Centro_Mantenimiento = new Mantenimiento($Vehiculo1,"13/05/25");
 echo $Centro_Mantenimiento->actualizarEstado("Arreglado");
+
 ?>
