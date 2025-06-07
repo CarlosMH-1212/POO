@@ -28,6 +28,7 @@ private $flota = [];
         }
     }
 
+    
 
     public function Almacenar_producto(){    
     return "Producto Almacenado";
