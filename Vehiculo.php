@@ -4,8 +4,7 @@ abstract class Vehiculo {
     private  $chasis;
     private  $carroceria;
     private  $patente;
-
-    protected string $estado;
+    private  $estado;
 
     public function __construct(
          $motor,
