@@ -8,6 +8,9 @@ require_once("Centro_externo.php");
 require_once("Centro_de_operaciones.php");
 require_once("producto.php");
 require_once("Gerente_logistica.php");
+require_once("Logitrans.php");
+
+$Logitrans = new Logitrans(3,"Camion");
 
 $Centro_OP = new Centro_de_operaciones();
 

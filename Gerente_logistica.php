@@ -14,7 +14,7 @@ class Gerente_logistica {
     }
    
 
-  public function Coord_tareas_op($Centro_OP){
+  public function Coord_tareas_op($Centro_OP, $Logitrans){
         if ($Centro_OP->gestion_Flota("Camion",3) == "Flota insuficiente") {
             $Centro_externo = new Centro_externo($Centro_OP);
 
