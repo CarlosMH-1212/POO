@@ -11,7 +11,7 @@ abstract class Vehiculo {
          $chasis,
          $carroceria,
          $patente,
-         $estado = 'SinInfo') {
+         $estado ) {
         $this->motor      = $motor;
         $this->chasis     = $chasis;
         $this->carroceria = $carroceria;
