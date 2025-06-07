@@ -28,12 +28,27 @@ private $flota = [];
         }
     }
 
-    
+    public function asignarVehiculosAProductos($productos) {
+    $resultado = [];
 
-    public function Almacenar_producto(){    
-    return "Producto Almacenado";
+    foreach ($productos as $producto) {
+        $asignado = false;
+        foreach ($this->flota as $vehiculo) {
+            if (method_exists($vehiculo, 'puedeTransportar') && $vehiculo->puedeTransportar($producto)) {
+                $resultado[] = "El producto '" . $producto->getTipo() . "' será transportado por " . get_class($vehiculo) . " con patente " . $vehiculo->getPatente();
+                $asignado = true;
+                break;
+            }
+        }
+
+        if (!$asignado) {
+            $resultado[] = "No hay vehículo disponible para transportar el producto '" . $producto->getCategoria() . "'";
+        }
     }
 
+    return $resultado;
+}
+  
 }
 
 ?>

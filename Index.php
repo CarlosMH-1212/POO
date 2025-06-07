@@ -10,9 +10,10 @@ require_once("producto.php");
 require_once("Gerente_logistica.php");
 require_once("Logitrans.php");
 
-$Logitrans = new Logitrans(3,"Camion");
 
+$Logitrans = new Logitrans(3,"Camion");
 $Centro_OP = new Centro_de_operaciones();
+
 
 $Vehiculo1 = new Camion("MotorDiesel", "ChasisFuerte", "CarroceriaGrande", "ABC123", "Roto");
 $Centro_OP->Ampliar_Flota($Vehiculo1);
@@ -24,25 +25,22 @@ $Vehiculo3 = new Refrigerado("MotorFrio", "ChasisFrio", "CarroceriaFrigorifica",
 $Centro_OP->Ampliar_Flota($Vehiculo3);
 
 
-$electro = new Producto(1, "Electrodomésticos",      "Pesado", 1200);
-$docu    = new Producto(2, "Documentación urgente",  "Liviano",          50);
-$vacunas = new Producto(3, "Vacunas",                "Refrigerado",   200);
+$pesados = new Producto(1, "Pesado",      "Pesado",      1200);
+$livianos    = new Producto(2, "Liviano",  "Liviano",        50);
+$refrigerado = new Producto(3, "Refrigerado", "Refrigerado",  200);
 
-echo $Vehiculo1->RealizarEntrega($electro) . "<br>";
-echo $Vehiculo2->RealizarEntrega($docu) . "<br>";
-echo $Vehiculo3->RealizarEntrega($vacunas) . "<br>";
+$productos = [$pesados, $livianos, $refrigerado];
 
-
-$Centro_Mantenimiento = new Mantenimiento($Vehiculo1,"13/05/25");
-
-echo $Centro_Mantenimiento->actualizarEstado("Arreglado");
 
 $gerente = new Gerente_logistica("12345678", "Juan", "Pérez");
 
-$gerente->Coord_tareas_op($Centro_OP,$Logitrans);
+
+$gerente->Aseg_efica_op($Centro_OP, $productos);
 
 
+$gerente->Coord_tareas_op($Centro_OP, $Logitrans);
 
 
-
+$Centro_Mantenimiento = new Mantenimiento($Vehiculo1,"13/05/25");
+echo $Centro_Mantenimiento->actualizarEstado("Arreglado");
 ?>

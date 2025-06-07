@@ -30,10 +30,11 @@ class Gerente_logistica {
         }
     }
 
-    public function Aseg_efica_op(){
-            
+   public function Aseg_efica_op($Centro_OP, $productos) {
+    $resultados = $Centro_OP->asignarVehiculosAProductos($productos);
+    foreach ($resultados as $linea) {
+        echo $linea . "<br>";
     }
-
-
- }
+}
+}
 ?>

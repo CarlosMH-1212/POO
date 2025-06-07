@@ -1,18 +1,18 @@
 <?php
 class Producto {
     private $id;
-    private $nombre;
     private $tipo;
+    private $categoria;
     private $peso;
 
-    public function __construct($id, $nombre, $tipo, $peso) {
+    public function __construct($id, $tipo, $categoria, $peso) {
         $this->id     = $id;
-        $this->nombre = $nombre;
-        $this->tipo   = $tipo;
+        $this->tipo = $tipo;
+        $this->categoria   = $categoria;
         $this->peso   = $peso;
     }
 
-    public function getNombre() { return $this->nombre; }
-    public function getTipo()   { return $this->tipo;   }
+    public function getTipo() { return $this->tipo; }
+    public function getCategoria()   { return $this->categoria;   }
 }
 ?>
