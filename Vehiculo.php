@@ -1,19 +1,18 @@
 <?php
 abstract class Vehiculo {
-    protected string $motor;
-    protected string $chasis;
-    protected string $carroceria;
-    protected string $patente;
+    private  $motor;
+    private  $chasis;
+    private  $carroceria;
+    private  $patente;
 
     protected string $estado;
 
     public function __construct(
-        string $motor,
-        string $chasis,
-        string $carroceria,
-        string $patente,
-        string $estado = 'SinInfo'
-    ) {
+         $motor,
+         $chasis,
+         $carroceria,
+         $patente,
+         $estado = 'SinInfo') {
         $this->motor      = $motor;
         $this->chasis     = $chasis;
         $this->carroceria = $carroceria;
@@ -21,11 +20,11 @@ abstract class Vehiculo {
         $this->estado     = $estado;
     }
 
-    public function getEstado(): string {
+    public function getEstado() {
         return $this->estado;
     }
 
-    public function setEstado(string $nuevoEstado): void {
+    public function setEstado(string $nuevoEstado) {
         $this->estado = $nuevoEstado;
     }
 
