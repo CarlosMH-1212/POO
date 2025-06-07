@@ -4,9 +4,7 @@ require_once("producto.php");
 
 class Refrigerado extends Vehiculo {
     public function RealizarEntrega($producto) {
-        return "Refrigerado entregando "
-             . $producto->getNombre()
-             . " (" . $producto->getTipo() . ") con temperatura controlada.";
+        return "Refrigerado entregando ". $producto->getNombre(). " (" . $producto->getTipo() . ") con temperatura controlada.";
     }
 }
 
