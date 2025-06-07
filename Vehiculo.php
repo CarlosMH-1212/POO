@@ -1,28 +1,38 @@
 <?php
+abstract class Vehiculo {
+    protected string $motor;
+    protected string $chasis;
+    protected string $carroceria;
+    protected string $patente;
 
-    abstract class Vehiculo {
+    protected string $estado;
 
-    private $motor;
-    private $chasis;
-    private $carroceria;
-    private $patente;    
-    private $mantenimiento_R;
-
-    public function __construct ($motor,$chasis,$carroceria,$patente,$mantenimiento_R){
-      
-       $this-> motor = $motor;
-       $this-> chasis = $chasis;
-       $this-> carroceria = $carroceria;
-       $this-> patente = $patente;
-       $this-> mantenimiento_R = $mantenimiento_R;
-   
+    public function __construct(
+        string $motor,
+        string $chasis,
+        string $carroceria,
+        string $patente,
+        string $estado = 'SinInfo'
+    ) {
+        $this->motor      = $motor;
+        $this->chasis     = $chasis;
+        $this->carroceria = $carroceria;
+        $this->patente    = $patente;
+        $this->estado     = $estado;
     }
-abstract public function RealizarEntrega ($producto);
 
-public function setMantenimiento($nuevo_Estado){
-    $this->mantenimiento_R = $nuevo_Estado;
+    public function getEstado(): string {
+        return $this->estado;
+    }
+
+    public function setEstado(string $nuevoEstado): void {
+        $this->estado = $nuevoEstado;
+    }
+
+    public function getPatente() {
+    return $this->patente;
 }
 
-}
 
+}
 ?>
