@@ -14,7 +14,7 @@ class Mantenimiento {
 
     public function mostrarResumen() {
         $tipoVehiculo = get_class($this->vehiculo);
-        echo "Vehículo Patente: {$this->vehiculo->getPatente()}, Fecha: {$this->fecha}, Tipo: {$tipoVehiculo}, Estado: {$this->vehiculo->getEstado()}, REALIZADO\n";
+        echo "Vehículo Patente: {$this->vehiculo->getPatente()}, Fecha: {$this->fecha}, Tipo: {$tipoVehiculo}, Estado: {$this->vehiculo->getEstado()}, REALIZADO<br>";
     }
 }
 ?>
