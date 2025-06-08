@@ -15,7 +15,12 @@ class Gerente_logistica {
    
 
   public function Coord_tareas_op($Centro_OP, $Logitrans){
-        if ($Centro_OP->gestion_Flota($Logitrans) == "Flota insuficiente") {
+         $resultado_Gestion = $Centro_OP->gestion_Flota($Logitrans);
+         
+        if ($resultado_Gestion == "Flota insuficiente") {
+
+            echo $resultado_Gestion."<br>";
+
             $Centro_externo = new Centro_externo($Centro_OP);
 
             $Vehiculo4 = new Camion("MotorDiesel", "ChasisFuerte", "CarroceriaGrande", "ABC123", "Arreglado");
@@ -25,8 +30,9 @@ class Gerente_logistica {
             $Centro_externo->Ampliar_Flota_externa($Vehiculo5);
 
             $Centro_externo->Agregar_Flota_externa();
+
         } else {
-            echo $Centro_OP->gestion_Flota($Logitrans);
+            echo $resultado_Gestion . "<br>";
         }
     }
 

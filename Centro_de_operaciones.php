@@ -23,8 +23,17 @@ private $productos = [];
         $tipoClase = $logitrans->getTipoVehiculo();
         $flota_necesaria = $logitrans->getCantFlotaNecesaria();
 
+    foreach ($this->flota as $vehiculo) {
+        if ($vehiculo instanceof $tipoClase && $vehiculo->getEstado() == "Roto") {
+            $Centro_Mantenimiento = new Mantenimiento($vehiculo, date("d/m/y"));
+            $Centro_Mantenimiento->actualizarEstado("Arreglado");
+            $Centro_Mantenimiento->mostrarResumen();
+        }
+    }
+
+
         $cant_flota = count(array_filter($this->flota, function($vehiculo) use ($tipoClase) {
-            return $vehiculo instanceof $tipoClase && $vehiculo->getEstado() === "Arreglado";
+            return $vehiculo instanceof $tipoClase && $vehiculo->getEstado() == "Arreglado";
         }));
        
         if ($cant_flota >= $flota_necesaria){
@@ -50,7 +59,7 @@ public function asignarVehiculosAProductos() {
                 ($tipoProducto == "Liviano" && $vehiculoClase == "Utilitario") ||
                 ($tipoProducto == "Refrigerado" && $vehiculoClase == "Refrigerado")
             ) {
-                $resultado[] = "El producto '" . $producto->getTipo() . "' será transportado por " . $vehiculoClase . " con patente " . $vehiculo->getPatente();
+                $resultado[] = $vehiculo->RealizarEntrega($producto);
                 $asignado = true;
                 break;
             }

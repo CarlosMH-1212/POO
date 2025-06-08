@@ -42,7 +42,4 @@ $gerente->Coord_tareas_op($Centro_OP, $Logitrans);
 $gerente->Aseg_efica_op($Centro_OP);
 
 
-$Centro_Mantenimiento = new Mantenimiento($Vehiculo1,"13/05/25");
-echo $Centro_Mantenimiento->actualizarEstado("Arreglado");
-
 ?>
