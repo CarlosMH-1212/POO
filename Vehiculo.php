@@ -30,7 +30,7 @@ abstract class Vehiculo {
     public function getPatente() {
     return $this->patente;
 }
-
+abstract public function RealizarEntrega();
 
 }
 ?>
