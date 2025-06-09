@@ -1,5 +1,5 @@
 <?php
-require_once("Vehiculo.php");
+//require_once("Vehiculo.php");
 
 class Camion extends Vehiculo {
     public function RealizarEntrega($producto) {
